@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Lab10ClassLibrary;
 
 namespace Lab10
@@ -7,6 +8,7 @@ namespace Lab10
     {
         static void Main(string[] args)
         {
+            List<Circle> listOfCircles = new List<Circle>();
             bool isRunning = true;
             while (isRunning)
             {
@@ -19,9 +21,10 @@ namespace Lab10
                 // display calculations
                 Console.WriteLine($"Circumference: {circle.CalculateFormattedCircumference()}");
                 Console.WriteLine($"Area: {circle.CalculateFormattedArea()}");
+                listOfCircles.Add(circle);
                 // if user decides not to run the program again say goodbye and 
                 // display the number of circle object(s) created
-                if (!RunAgain.PlayAgain())
+                if (!RunAgain.PlayAgain(listOfCircles))
                 {
                     isRunning = false;
                 }

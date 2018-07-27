@@ -6,24 +6,15 @@ namespace Lab10ClassLibrary
     {
         // properties
         private double Radius { get; set; }
-        public double Pi { get; private set; }
-        static int NumberOfCirclesCreated = 0;
         // constructor
         public Circle(double radius)
         {
             Radius = radius;                   
-            Pi = Math.PI;
-            NumberOfCirclesCreated++;
         } 
-        // method to access the number of circles created
-        public static int GetNumberOfCircles()
-        {
-            return NumberOfCirclesCreated;
-        }
         // calculate circumference of a circle
         public double CalculateCircumference() 
         {
-            return 2 * Pi * Radius;
+            return 2 * Math.PI * Radius;
         }
         // calculate the circumference of the formatted user input
         public string CalculateFormattedCircumference()
@@ -34,7 +25,7 @@ namespace Lab10ClassLibrary
         // calculate area of a circle
         public double CalculateArea()
         {
-          return Pi * (Radius * Radius);  
+          return Math.PI * (Radius * Radius);  
         }
         // calculate the area of the formatted user input
         public string CalculateFormattedArea()

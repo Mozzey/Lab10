@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using Lab10ClassLibrary;
 
 namespace Lab10ClassLibrary
 {
     // asks the user if they would like to run the program again
     public class RunAgain
     {
-        public static bool PlayAgain()
+        public static bool PlayAgain(List<Circle> listOfCircles)
         {
             Console.WriteLine("Continue? (y/n)");
             string yOrNo = Console.ReadLine().ToLower();
@@ -15,13 +17,13 @@ namespace Lab10ClassLibrary
             }
             else if (yOrNo.StartsWith("n"))
             {
-                Console.WriteLine($"Goodbye. You created {Circle.GetNumberOfCircles()} Circle object(s)");
+                Console.WriteLine($"Goodbye. You created {listOfCircles.Count} Circle object(s)");
                 Console.ReadLine();
                 return false;
             }
             else
             {
-                return PlayAgain();
+                return PlayAgain(listOfCircles);
             }
         }
     }
