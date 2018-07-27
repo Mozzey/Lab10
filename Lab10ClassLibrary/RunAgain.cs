@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Lab10ClassLibrary
 {
+    // asks the user if they would like to run the program again
     public class RunAgain
     {
         public static bool PlayAgain()

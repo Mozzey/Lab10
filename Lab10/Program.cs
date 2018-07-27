@@ -10,12 +10,17 @@ namespace Lab10
             bool isRunning = true;
             while (isRunning)
             {
+                // greet the user
                 Console.WriteLine("Welcome to the Circle Tester");
+                // set valid integer input - check by Validator Class
                 double validInput = Validator.ValidateDouble();
+                // initialize a new circle
                 var circle = new Circle(validInput);
-
+                // display calculations
                 Console.WriteLine($"Circumference: {circle.CalculateFormattedCircumference()}");
                 Console.WriteLine($"Area: {circle.CalculateFormattedArea()}");
+                // if user decides not to run the program again say goodbye and 
+                // display the number of circle object(s) created
                 if (!RunAgain.PlayAgain())
                 {
                     isRunning = false;

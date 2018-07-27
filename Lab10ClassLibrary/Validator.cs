@@ -8,18 +8,12 @@ namespace Lab10
 {
     public class Validator
     {
-        private string InputToValidate { get; set; }
-
-        public Validator(string input)
-        {
-            InputToValidate = input;
-        }
-
+        // validates
         public static double ValidateDouble()
         {
             Console.Write("Enter Radius: ");
             string userInput = Console.ReadLine();
-            if (double.TryParse(userInput, out double validInt) && validInt != 0)
+            if (double.TryParse(userInput, out double validInt) && validInt > 0)
             {
                 return validInt;
             }
@@ -29,7 +23,5 @@ namespace Lab10
                 return ValidateDouble();
             }
         }
-
-        
     }
 }
