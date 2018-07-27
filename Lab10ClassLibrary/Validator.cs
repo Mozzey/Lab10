@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab10
+namespace Lab10ClassLibrary
 {
     public class Validator
     {
-        // validates
+        // validates user input for valid integer greater than 0
         public static double ValidateDouble()
         {
             Console.Write("Enter Radius: ");

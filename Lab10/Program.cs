@@ -13,9 +13,9 @@ namespace Lab10
                 // greet the user
                 Console.WriteLine("Welcome to the Circle Tester");
                 // set valid integer input - check by Validator Class
-                double validInput = Validator.ValidateDouble();
+                double userInput = Validator.ValidateDouble();
                 // initialize a new circle
-                var circle = new Circle(validInput);
+                var circle = new Circle(userInput);
                 // display calculations
                 Console.WriteLine($"Circumference: {circle.CalculateFormattedCircumference()}");
                 Console.WriteLine($"Area: {circle.CalculateFormattedArea()}");
