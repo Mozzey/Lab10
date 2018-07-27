@@ -1,9 +1,5 @@
 ﻿using System;
 using Lab10ClassLibrary;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab10
 {
@@ -11,14 +7,20 @@ namespace Lab10
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Circle Tester");
-            Console.Write("Enter Raidus: ");
-            double radius = double.Parse(Console.ReadLine());
-            var circle = new Circle(radius);
+            bool isRunning = true;
+            while (isRunning)
+            {
+                Console.WriteLine("Welcome to the Circle Tester");
+                double validInput = Validator.ValidateDouble();
+                var circle = new Circle(validInput);
 
-            Console.WriteLine(circle); // for testing erase later
-
-            Console.ReadKey();
+                Console.WriteLine($"Circumference: {circle.CalculateFormattedCircumference()}");
+                Console.WriteLine($"Area: {circle.CalculateFormattedArea()}");
+                if (!RunAgain.PlayAgain())
+                {
+                    isRunning = false;
+                }
+            }
         }
     }
 }
